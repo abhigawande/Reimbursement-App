@@ -3,6 +3,7 @@ require('dotenv').config();
 
 const authenticateUser = (req, res, next) => {
     const token = req.header('Authorization');
+    
     if (!token) return res.status(401).json({ message: 'Access denied' });
 
     try {
